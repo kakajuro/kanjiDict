@@ -5,13 +5,11 @@ body {
 }
 
 .App {
-  margin: 0;
-  padding: 0;
   display: flex;
   text-align: center;
   background-color: #03021a;
   font-family: 'Nunito', sans-serif;
-  width: 550px;
-  height: 550px;
+  width: 400px;
+  height: 600px;
   color: white;
 }
