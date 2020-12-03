@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Demo React-Chrome extension",
-  "description": "This extension shows how to run a React app as a Chrome extension",
+  "name": "kanjiDict",
+  "description": "The extension built to provide you quick kanji definitions right from your browser",
   "version": "1.0",
 
   "browser_action": {
