@@ -1,6 +1,8 @@
 //日
-import React, { useState, useRef } from 'react';
-import { AiFillGithub } from 'react-icons/ai';
+import React, { useState } from 'react';
+
+import { AiOutlineGithub } from 'react-icons/ai';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 import './App.css';
 
@@ -13,6 +15,9 @@ function App() {
     console.log("Searched: " + search);
     e.preventDefault();
   }
+
+  const onGithubClicked = () => window.open("https://github.com/swishyDev/kanjiFinder.git");
+  const onInfoClicked = () => console.log("Info screen");
 
   return (
     <div className="window">
@@ -28,7 +33,8 @@ function App() {
           />
         </form>
         <div className="icons">
-          <AiFillGithub className="icons github" size={40}/>
+          <AiOutlineGithub className="icons github" size={34} onClick={() => onGithubClicked()}/>
+          <AiOutlineInfoCircle className="icons info" size={34} onClick={() => onInfoClicked()}/>
         </div>
       </div>
     </div>

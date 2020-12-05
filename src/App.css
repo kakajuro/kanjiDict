@@ -34,7 +34,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .top-container {
-  padding-top: 1rem;
+  padding-top: 0.8rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -52,5 +52,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .icons {
+  padding-inline: 2pt;
   color: white;
+  transition: 0.5s;
+}
+
+.icons:hover {
+  color: #b9beca;
 }
