@@ -6,7 +6,7 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "logo_small.png",
+    "default_icon": "dict.png",
     "default_popup": "index.html"
   }
 }

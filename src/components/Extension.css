@@ -35,8 +35,16 @@ input[type="search"]::-webkit-search-results-decoration {
   height: 450px;
 }
 
+.header-container {
+  display: flex;
+  justify-content: center;
+  height: 2.5rem;
+}
+
 .header {
+  display: flex;
   color: white;
+  align-self: center;
 }
 
 .top-container {
@@ -48,7 +56,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .searchbar {
   font-family: 'Tajawal', sans-serif;
-  font-size: medium;
+  font-size: 17px;
   width: 225px;
   height: 45px;
   padding: 5px;

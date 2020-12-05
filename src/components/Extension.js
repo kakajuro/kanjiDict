@@ -40,6 +40,7 @@ function Extension() {
           <BiInfoCircle className="icons info" size={34} onClick={() => onInfoClicked()}/>
         </div>
       </div>
+      {}
     </div>
   );
 }

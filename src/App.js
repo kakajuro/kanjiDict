@@ -1,4 +1,3 @@
-//日
 import React from 'react';
 import Extension from './components/Extension';
 
