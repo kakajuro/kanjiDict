@@ -26,15 +26,20 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .window {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: #02010f;
   font-family: 'Comfortaa', cursive;
-  width: 400px;
-  height: 500px;
+  width: 380px;
+  height: 450px;
+}
+
+.header {
+  color: white;
 }
 
 .top-container {
-  padding-top: 0.8rem;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

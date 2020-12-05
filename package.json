@@ -8,7 +8,8 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-icons": "^4.1.0"
+    "react-icons": "^4.1.0",
+    "unofficial-jisho-api": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,7 +17,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browser":{
+  "browser": {
     "child_process": false
-    }  
+  }
 }
