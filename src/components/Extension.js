@@ -9,10 +9,14 @@ import './Extension.css';
 function Extension() {
   const [search, setSearch] = useState("");
 
+
+
   const handleSubmit = e => {
     if (!search) return;
 
     console.log("Searched: " + search);
+    
+    
     e.preventDefault();
   }
 
@@ -23,6 +27,10 @@ function Extension() {
     <div className="window">
       <div className="header-container">
         <h3 className="header">KanjiDict</h3>
+        <div className="icons">
+          <AiOutlineGithub className="icons github" size={34} onClick={() => onGithubClicked()}/>
+          <BiInfoCircle className="icons info" size={34} onClick={() => onInfoClicked()}/>
+        </div>
       </div>
       <div className="top-container">
         <form className="form" onSubmit={handleSubmit}>
@@ -35,12 +43,8 @@ function Extension() {
             autoFocus={true}
           />
         </form>
-        <div className="icons">
-          <AiOutlineGithub className="icons github" size={34} onClick={() => onGithubClicked()}/>
-          <BiInfoCircle className="icons info" size={34} onClick={() => onInfoClicked()}/>
-        </div>
       </div>
-      {}
+
     </div>
   );
 }
