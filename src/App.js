@@ -1,9 +1,32 @@
-import React, { Component } from 'react';
-import Main from './components/Main'
+//日
+import React, { useState } from 'react';
+
+import './App.css';
 
 function App() {
+  const [search, setSearch] = useState("");
+
+  const handleSubmit = e => {
+    if (!search) return;
+
+    console.log("Searched: " + search);
+    e.preventDefault();
+  }
+
   return (
-    <Main />
+    <div className="App">
+      <div className="searchbar-container">
+        <form className="form" onSubmit={handleSubmit}>
+          <input 
+            type="search"
+            className="searchbar"
+            placeholder="Enter kanji..."
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+          />
+        </form> 
+      </div>
+    </div>
   );
 }
 
