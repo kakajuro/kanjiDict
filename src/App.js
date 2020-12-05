@@ -1,5 +1,6 @@
 //日
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { AiFillGithub } from 'react-icons/ai';
 
 import './App.css';
 
@@ -14,8 +15,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className="searchbar-container">
+    <div className="window">
+      <div className="top-container">
         <form className="form" onSubmit={handleSubmit}>
           <input 
             type="search"
@@ -23,8 +24,12 @@ function App() {
             placeholder="Enter kanji..."
             onChange={(e) => setSearch(e.target.value)}
             value={search}
+            autoFocus={true}
           />
-        </form> 
+        </form>
+        <div className="icons">
+          <AiFillGithub className="icons github" size={40}/>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 html,
 body {
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 /* clears the 'X' from Internet Explorer */
@@ -25,28 +25,32 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-
-.App {
+.window {
   text-align: center;
   background-color: #02010f;
   font-family: 'Comfortaa', cursive;
   width: 400px;
-  height: 600px;
+  height: 500px;
 }
 
-.App h1 {
-  color: white;
-}
-
-.form {
-  padding-top: 5px;
+.top-container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .searchbar {
-  font-family: 'Comfortaa', cursive;
-  width: 50%;
-  height: 35px;
+  font-family: 'Tajawal', sans-serif;
+  font-size: medium;
+  width: 225px;
+  height: 45px;
   padding: 5px;
-  border: 3px solid rgb(209, 209, 209);
+  border: none;
   outline: none;
+}
+
+.icons {
+  color: white;
 }
