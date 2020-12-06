@@ -1,21 +1,33 @@
 //日
 import React, { useState } from 'react';
+import './Extension.css';
 
 import { AiOutlineGithub } from 'react-icons/ai';
-import { BiInfoCircle } from 'react-icons/bi';
+import { IoMdSettings } from 'react-icons/io';
 
-import './Extension.css';
+function urlExists(url, callback) {
+  fetch(url, { method: 'head' })
+  .then(function(status) {
+    callback(status.ok)
+  });
+}
 
 function Extension() {
   const [search, setSearch] = useState("");
 
-
-
   const handleSubmit = e => {
     if (!search) return;
 
-    console.log("Searched: " + search);
-    
+    let url = 'https://kanjiapi.dev/v1/kanji/' + search;
+
+    urlExists(url, function(exists) {
+      if (exists) {
+        fetch(url).then(response => response.json())
+        .then(responseJSON => console.log(responseJSON.kanji))
+      } else {
+        console.log("URL not found");
+      }
+    });
     
     e.preventDefault();
   }
@@ -28,8 +40,8 @@ function Extension() {
       <div className="header-container">
         <h3 className="header">KanjiDict</h3>
         <div className="icons">
-          <AiOutlineGithub className="icons github" size={34} onClick={() => onGithubClicked()}/>
-          <BiInfoCircle className="icons info" size={34} onClick={() => onInfoClicked()}/>
+          <AiOutlineGithub className="icons github" size={28} onClick={() => onGithubClicked()}/>
+          <IoMdSettings className="icons info" size={28} onClick={() => onInfoClicked()}/>
         </div>
       </div>
       <div className="top-container">
@@ -44,7 +56,6 @@ function Extension() {
           />
         </form>
       </div>
-
     </div>
   );
 }
