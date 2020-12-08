@@ -1,5 +1,5 @@
 //日
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Extension.css';
 
 import { AiOutlineGithub } from 'react-icons/ai';
@@ -14,26 +14,37 @@ function urlExists(url, callback) {
 
 function Extension() {
   const [search, setSearch] = useState("");
+  const [searchResultText, setSearchResultText] = useState("");
+
+  const onGithubClicked = () => window.open("https://github.com/swishyDev/kanjiFinder.git");
+  const onInfoClicked = () => console.log("Info screen");
+
+  useEffect(() => {
+    setSearchResultText("");
+  }, [])
 
   const handleSubmit = e => {
-    if (!search) return;
+    if (!search) {
+      return;
+    };
 
     let url = 'https://kanjiapi.dev/v1/kanji/' + search;
 
     urlExists(url, function(exists) {
       if (exists) {
         fetch(url).then(response => response.json())
-        .then(responseJSON => console.log(responseJSON.kanji))
+        .then(responseJSON => {
+          setSearchResultText("Kanji found");
+          console.log(responseJSON.kanji)
+        })
       } else {
-        console.log("URL not found");
+        setSearchResultText("Kanji not found");
       }
+      
     });
     
     e.preventDefault();
   }
-
-  const onGithubClicked = () => window.open("https://github.com/swishyDev/kanjiFinder.git");
-  const onInfoClicked = () => console.log("Info screen");
 
   return (
     <div className="window">
@@ -55,6 +66,12 @@ function Extension() {
             autoFocus={true}
           />
         </form>
+      </div>
+      <div className="response-container">
+        <div className="kanji-found">
+          <p>{searchResultText}</p>
+        </div>
+
       </div>
     </div>
   );

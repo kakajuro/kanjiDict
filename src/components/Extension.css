@@ -59,7 +59,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .searchbar {
   font-family: 'Tajawal', sans-serif;
   font-size: 17px;
-  width: 307px;
+  width: 293px;
   height: 45px;
   padding: 5px;
   border: none;
@@ -74,4 +74,21 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .icons:hover {
   color: #6f9aff;
+}
+
+.response-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.kanji-found {
+  display: flex;
+  color: white;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+.kanji-found p {
+  font-size: small;
 }
