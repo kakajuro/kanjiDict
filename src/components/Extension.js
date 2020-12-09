@@ -5,6 +5,8 @@ import './Extension.css';
 import { AiOutlineGithub } from 'react-icons/ai';
 import { IoMdSettings } from 'react-icons/io';
 
+import KanjiDef from './KanjiDef';
+
 function urlExists(url, callback) {
   fetch(url, { method: 'head' })
   .then(function(status) {
@@ -12,9 +14,24 @@ function urlExists(url, callback) {
   });
 }
 
+function weaveArray(array, weaveValue) {
+  const {length} = array;
+  return array.reduce((result, value, i) => {
+    if(i < length - 1) {
+      result.push(value, weaveValue);
+    } else {
+      result.push(value);
+    }
+    return result;
+  }, []);
+}
+
 function Extension() {
   const [search, setSearch] = useState("");
   const [searchResultText, setSearchResultText] = useState("");
+
+  const [currentKanji, setCurrentKanji] = useState("");
+  const [currentMeanings, setCurrentMeanings]= useState("");
 
   const onGithubClicked = () => window.open("https://github.com/swishyDev/kanjiFinder.git");
   const onInfoClicked = () => console.log("Info screen");
@@ -34,8 +51,10 @@ function Extension() {
       if (exists) {
         fetch(url).then(response => response.json())
         .then(responseJSON => {
-          setSearchResultText("Kanji found");
-          console.log(responseJSON.kanji)
+          setSearchResultText("Results found for " + "'" + responseJSON.kanji + "'" + ":");
+          setCurrentKanji("Kanji: " + responseJSON.kanji);
+          setCurrentMeanings(responseJSON.meanings);
+          //console.log(responseJSON)
         })
       } else {
         setSearchResultText("Kanji not found");
@@ -71,7 +90,9 @@ function Extension() {
         <div className="kanji-found">
           <p>{searchResultText}</p>
         </div>
-
+        <div className="definition">
+          <KanjiDef kanji={currentKanji} meanings={currentMeanings}/>
+        </div>
       </div>
     </div>
   );

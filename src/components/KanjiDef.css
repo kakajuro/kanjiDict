@@ -1,0 +1,10 @@
+.object {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 50%
+}
+
+.p {
+    font-size: medium;
+}
